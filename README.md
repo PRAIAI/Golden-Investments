@@ -3,7 +3,7 @@ InterBOxSpiderWeb.NET PRVPNRFAI.py 2025 - 2029 Golden Intelligence Agency (#DIA)
 
 Golden Investments App
 
-Dies ist eine Full-Stack-Anwendung, die die Kernfunktionalitäten und das Design von Airbnb nachbildet, jedoch unter dem Namen "Golden Investments" und mit dem Hauptakzent in Babyblau/Telegram Blau ($\approx \#2 \text{EA} 7 \text{EE}$).
+Dies ist eine Full-Stack-Anwendung, die die Kernfunktionalitäten und das Design von Airbnb nachbildet, jedoch unter dem Namen "Golden Investments" und mit dem Hauptakzent in Babyblau/Telegram Blau (((\>($\approx \#2 \text{EA} 7 \text{EE}$)</))).
 
 Architektur
 
