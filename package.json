@@ -1,0 +1,23 @@
+{
+  "name": "golden-investments-fullstack",
+  "version": "1.0.0",
+  "description": "Airbnb Clone mit babyblauem Farbschema.",
+  "main": "server/server.js",
+  "scripts": {
+    "start:server": "node server/server.js",
+    "start:client": "cd client && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [
+    "airbnb",
+    "clone",
+    "fullstack",
+    "react",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
