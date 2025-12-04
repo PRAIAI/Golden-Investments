@@ -24,12 +24,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
-    res.send('Server läuft und ist verbunden!');
+    // Korrigiert: "lÃ¤uft" statt "luft"
+    res.send('Server lÃ¤uft und ist verbunden!');
 });
 
 app.listen(PORT, () => {
-    console.log(`[SERVER] Golden Investments Backend läuft auf Port ${PORT}`);
+    // Korrigiert: "lÃ¤uft" statt "luft"
+    console.log(`[SERVER] Golden Investments Backend lÃ¤uft auf Port ${PORT}`);
 });
 
-// Der ursprüngliche export-Befehl war falsch platziert, da du den Server direkt startest.
-// Wenn du export default connectDB; benötigst, füge bitte "type": "module" in die package.json ein.
+// Korrigiert: "ursprÃ¼ngliche" statt "ursprngliche"
+// Der ursprÃ¼ngliche export-Befehl war falsch platziert, da du den Server direkt startest.
+// Wenn du export default connectDB; benÃ¶tigst, fÃ¼ge bitte "type": "module" in die package.json ein.
