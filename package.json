@@ -3,21 +3,35 @@
   "version": "1.0.0",
   "description": "Airbnb Clone mit babyblauem Farbschema.",
   "main": "server/server.js",
+  "private": true,
+  "homepage": "https://PRAIAI.github.io/Golden-Investments/client",
   "scripts": {
     "start:server": "node server/server.js",
     "start:client": "cd client && npm start",
-    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build:client": "cd client && npm run build",
+    "deploy:client": "cd client && npm run deploy",
+    "predeploy": "npm run build:client",
+    "deploy": "npm run deploy:client"
   },
   "keywords": [
     "airbnb",
     "clone",
     "fullstack",
     "react",
-    "node"
+    "node",
+    "express",
+    "github-pages"
   ],
-  "author": "",
+  "author": "Justin Koch",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
