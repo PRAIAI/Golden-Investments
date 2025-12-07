@@ -1,0 +1,14 @@
+{
+  "name": "golden-investments-server",
+  "version": "1.0.0",
+  "description": "Backend API for Golden Investments",
+  "main": "server.js",
+  "type": "module",  <-- Fügen Sie DIESE ZEILE HINZU
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+    // Fügen Sie hier weitere Dependencies hinzu, falls nötig
+  }
+}
