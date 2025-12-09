@@ -1,0 +1,9 @@
+Ignore Node Modules and build artifacts for Monorepo setup
+Root
+node_modules/package-lock.json
+Client (Frontend)
+client/node_modules/client/build/client/.env.localclient/package-lock.json
+Server (Backend)
+server/node_modules/server/.envserver/package-lock.json
+Logs and OS files
+npm-debug.log*.DS_Store*.swpNotepad++/client/temp_package.json
