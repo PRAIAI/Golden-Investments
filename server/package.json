@@ -1,5 +1,5 @@
 {
-  "name": "golden-investments-client",
+  "type": "module", "name": "golden-investments-client",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
