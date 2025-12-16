@@ -1,0 +1,15 @@
+/* Die meisten Styles sollten direkt in den React-Komponenten über Tailwind-Klassen 
+definiert werden. Diese Datei wird für spezifische oder komplexe App-weite Regeln 
+reserviert, die Tailwind nicht abdeckt.
+
+Beispiel für einen zukünftigen, spezifischen Stil:
+.listing-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+*/
+
+/* Beispiel für eine einfache Übergangsregel, die global gelten soll */
+.transition-all-200 {
+    transition: all 200ms ease-in-out;
+}
