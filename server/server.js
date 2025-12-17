@@ -14,47 +14,26 @@ app.use(cors());
 app.use(express.json());
 
 const connectDB = async () => {
-    if (isSimulationMode) {
-        try {
-            console.log('[DB] Verbinde mit der Golden Investments Datenbank (TEST-MODUS)...');
-            await new Promise(resolve => setTimeout(resolve, 2000)); 
-            console.log('[DB] Verbindung erfolgreich hergestellt (TEST-/MOCK-MODUS).');
+    try {
+        if (isSimulationMode) {
+            console.log('[DB] TEST-MODUS aktiv.');
             return true;
-        } catch (error) {
-            console.error('[DB ERROR] Datenbankverbindung fehlgeschlagen (TEST-MODUS):', error.message);
-            process.exit(1);
         }
-    } else {
-        try {
-            if (!MONGO_URI) {
-                throw new Error("MONGO_URI ist nicht definiert.");
-            }
-            console.log('[DB] Verbinde mit der Golden Investments Datenbank (PRODUKTION)...');
-            await mongoose.connect(MONGO_URI);
-            console.log('[DB] Verbindung erfolgreich hergestellt (PRODUKTION).');
-            return true;
-        } catch (error) {
-            console.error('[DB ERROR] Datenbankverbindung fehlgeschlagen (PRODUKTION):', error.message);
-            process.exit(1);
-        }
+        if (!MONGO_URI) throw new Error("MONGO_URI fehlt in .env");
+        await mongoose.connect(MONGO_URI);
+        console.log('[DB] Verbindung PRODUKTION steht.');
+    } catch (err) {
+        console.error('[DB ERROR]', err.message);
+        process.exit(1);
     }
 };
 
 connectDB().then(() => {
     app.listen(PORT, () => {
-        const mode = isSimulationMode ? 'TEST-MODUS' : 'PRODUKTION';
-        console.log(`[SERVER] Golden Investments Backend läuft auf Port ${PORT} (Modus: ${mode})`);
+        console.log(`[SERVER] Läuft auf Port ${PORT}`);
     });
 });
 
 app.get('/', (req, res) => {
-    const dbStatus = isSimulationMode 
-        ? 'Test-/Mock-Verbindung aktiv und OK' 
-        : (mongoose.connection.readyState === 1 ? 'Verbunden (PRODUKTION)' : 'Nicht verbunden');
-
-    res.json({
-        message: 'Golden Investments Server läuft!',
-        modus: isSimulationMode ? 'Test-/Mock-Modus' : 'Echter Datenbank-Modus (PRODUKTION)',
-        dbStatus: dbStatus
-    });
+    res.json({ status: 'Server läuft!' });
 });
